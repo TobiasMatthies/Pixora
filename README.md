@@ -48,6 +48,27 @@ A full-stack Instagram-Like application built with Angular 21 and Django 6, feat
    pnpm start
    ```
 
+### Docker
+
+1. **Clone the repository and enter the project directory**
+
+2. **Create a `.env` file** from the example and set a strong `SECRET_KEY`:
+
+   ```bash
+   cp backend/.env.example backend/.env
+   ```
+
+   The default config uses **SQLite** (`USE_SQLITE=True`), so no database setup is needed locally.
+
+3. ```bash
+      cd backend
+      docker build -t pixora-be:1.0.0 .
+   ```
+
+4. ```bash
+      docker run --name pixora-be -p 127.0.0.1:8000:8000 pixora-be:1.0.0
+   ```
+
 ## Usage
 
 | Service     | URL                         |

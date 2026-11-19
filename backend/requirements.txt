@@ -8,3 +8,4 @@ Faker>=33.0
 django-filter>=24.0
 djangorestframework-camel-case>=1.4
 python-dotenv>=1.0
+gunicorn==27.0.1
