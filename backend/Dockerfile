@@ -23,7 +23,7 @@ WORKDIR /app
 COPY --from=builder /app/env /app/env
 ENV PATH="env/bin/:$PATH"
 
-COPY . .
+COPY . /app
 
 RUN chmod +x ./entrypoint.sh
 
