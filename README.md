@@ -60,12 +60,25 @@ A full-stack Instagram-Like application built with Angular 21 and Django 6, feat
 
    The default config uses **SQLite** (`USE_SQLITE=True`), so no database setup is needed locally.
 
-3. ```bash
+3. **Build the frontend image**
+   ```bash
+      cd frontend
+      docker build -t pixora-fe:1.0.0 .
+   ```
+
+4. **Start the frontend container**
+   ```bash
+      docker run --name pixora-fe -p 127.0.0.1:4200:4200 pixora-fe:1.0.0
+   ```
+
+5.  **Build the backend image**
+   ```bash
       cd backend
       docker build -t pixora-be:1.0.0 .
    ```
 
-4. ```bash
+6. **Start the frontend container**
+   ```bash
       docker run --name pixora-be -p 127.0.0.1:8000:8000 pixora-be:1.0.0
    ```
 
