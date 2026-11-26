@@ -1,0 +1,16 @@
+services:
+  frontend:
+    image: pixora-fe:1.0.0
+    build:
+      context: frontend
+
+    ports:
+      - '${fe_port:-4200}:8080'
+
+  backend:
+    image: pixora-be:1.0.0
+    build:
+      context: backend
+
+    ports:
+      - '${be_port:-8000}:8000'

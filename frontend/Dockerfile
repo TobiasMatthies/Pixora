@@ -14,6 +14,7 @@ RUN pnpm build
 
 FROM nginxinc/nginx-unprivileged:1.29.5-alpine-slim AS runtime
 
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /app/dist/pixora-frontend/browser /usr/share/nginx/html
 
 EXPOSE 8080
