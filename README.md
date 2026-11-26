@@ -68,7 +68,7 @@ A full-stack Instagram-Like application built with Angular 21 and Django 6, feat
 
 4. **Start the frontend container**
    ```bash
-      docker run --name pixora-fe -p 127.0.0.1:4200:4200 pixora-fe:1.0.0
+      docker run --name pixora-fe -p 127.0.0.1:4200:8080 pixora-fe:1.0.0
    ```
 
 5.  **Build the backend image**

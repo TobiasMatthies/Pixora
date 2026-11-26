@@ -10,4 +10,12 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-CMD ["pnpm", "start"]
+RUN pnpm build
+
+FROM nginxinc/nginx-unprivileged:1.29.5-alpine-slim AS runtime
+
+COPY --from=builder /app/dist/pixora-frontend/browser /usr/share/nginx/html
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
