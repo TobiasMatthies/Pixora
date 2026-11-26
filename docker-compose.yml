@@ -7,10 +7,22 @@ services:
     ports:
       - '${fe_port:-4200}:8080'
 
+    volumes:
+      - static_data:/srv/static:ro
+      - media_data:/srv/media:ro
+
   backend:
     image: pixora-be:1.0.0
     build:
       context: backend
 
-    ports:
-      - '${be_port:-8000}:8000'
+    expose:
+      - 8000
+
+    volumes:
+      - static_data:/app/staticfiles
+      - media_data:/app/media
+
+volumes:
+  static_data:
+  media_data:
